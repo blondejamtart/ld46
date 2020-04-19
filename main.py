@@ -15,9 +15,9 @@ if __name__ == "__main__":
     industries = []
     
     market = Market()
-    player_civ = Populace(5, 0, 0)    
+    player_supply = Supply("player", 100, 10, 0, 10, 0, 1000, market)
+    player_civ = Populace(5, 0, 0, player_supply)    
     # (id, food, mead, trinkets, lumber, ducats, market)
-    player_supply = Supply("player", 100, 10, 0, 10, 1000, market)
     player_industry = Industry(player_civ, player_supply)
     
     civs += [player_civ]

@@ -15,14 +15,14 @@ class Market:
         self.registation = Queue()
 
     def buy(self, resource, amount, seller_delivery):
-        self.purchases.put[resource, amount, seller_delivery])
+        self.purchases.put([resource, amount, seller_delivery])
 
     def register(self, seller_id):
         self.registration.put(seller_id)
 
     def __buy(self, request):
         resource, amount, seller_delivery = request
-        if amount > self.available[resource]
+        if amount > self.available[resource]:
             amount = self.available[resource]
         self.available[resource] -= amount
         for seller_id in self.shares.keys():

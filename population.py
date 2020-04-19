@@ -50,7 +50,7 @@ class Populace:
                 else:
                     unmet = [False, False, True]
                     self.rowdy_snobs += (peasant_food_need + crafter_food_need + snob_food_need - acquired_food)/FOOD_COST
-         return unmet
+        return unmet
 
     def sustain_mead(self):
         unmet = [False, False, False]
@@ -83,13 +83,13 @@ class Populace:
                     unmet = [False, False, True]
                     self.rowdy_snobs += (crafter_mead_need + snob_mead_need - acquired_mead)/MEAD_COST
             self.supply.consume("mead", self.supply.stockpile["mead"])
-         return unmet
+        return unmet
 
     def sustain_trinkets(self):
         unmet = [False, False, False]
         snob_trinket_need = self.num_snobs*TRINKET_COST
 
-        if snob_trinket_need <= self.supply.stockpile["trinkets"]):
+        if snob_trinket_need <= self.supply.stockpile["trinkets"]:
             self.supply.consume("trinkets", snob_trinket_need)
             if self.rowdy_crafters == 0:
                 if self.supply.stockpile["trinkets"] > self.num_crafters*TRINKET_COST:
@@ -108,16 +108,16 @@ class Populace:
                 unmet = [False, False, True]
                 self.rowdy_snobs += (snob_trinket_need - acquired_trinkets)/TRINKET_COST
             self.supply.consume("trinkets", self.supply.stockpile["trinkets"])
-         return unmet        
+        return unmet        
 
     def promote(self):
         if self.happy_crafters > self.num_crafters:
-            to_promote = min(self.num_crafters, floor(0.5*(self.happy_crafters - self.num_crafters))
+            to_promote = min(self.num_crafters, floor(0.5*(self.happy_crafters - self.num_crafters)))
             self.num_crafters -= to_promote
             self.num_snobs += to_promote
 
         if self.happy_peasants > self.num_peasants:
-            to_promote = min(self.num_peasants, floor(0.5*(self.happy_peasants - self.num_peasants))
+            to_promote = min(self.num_peasants, floor(0.5*(self.happy_peasants - self.num_peasants)))
             self.num_peasants -= to_promote
             self.num_crafters += to_promote
  
