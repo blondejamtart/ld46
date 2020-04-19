@@ -1,0 +1,24 @@
+!populace!
+- 3 pop tiers (different jobs/needs)
+- increase rowdiness if needs not met
+- riot when demote
+- peasants become nomads & leave when demote
+- necessity resource(s) + luxury/promote resource
+- need met or unmet for N ticks to change tier
+- nomads can join if enough resources (join as peasants)
+- bottom up consumption
+
+!economy!
+- consume local first
+- offer excess for trade
+- request imports from market
+- get money from selling, need money to buy
+- hoarding: set % of resources willing to sell
+
+!neighbours!
+- fixed initial productions
+- tick up to max over time
+
+!resources!
+- food, building materials, metals, mead, trinkets
+
